@@ -1,5 +1,6 @@
 'use client'
 
+import { createBook } from "@/actions"
 import { useState } from "react"
 
 function BookForm() {
@@ -18,8 +19,7 @@ function BookForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // DO SOMETHING WITH THE DATA
-    console.log(book)
+    createBook(book)
   }
 
   return (
