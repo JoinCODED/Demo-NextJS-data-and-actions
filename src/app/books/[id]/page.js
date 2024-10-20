@@ -1,8 +1,11 @@
 import BookCard from '@/components/BookCard'
-import books from '@/data/books'
 
-function BookDetailPage({ params }) {
+async function BookDetailPage({ params }) {
+  const response = await fetch("https://coded-books-api-crud.eapi.joincoded.com/books");
+  const books = await response.json();
+
   const book = books.find(book => book.id === +params.id)
+
   return <BookCard book={book} />
 }
 
