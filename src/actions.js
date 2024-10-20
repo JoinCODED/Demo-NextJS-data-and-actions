@@ -5,3 +5,8 @@ export async function fetchBooks() {
   const books = await response.json();
   return books;
 }
+
+export async function createBook(book) {
+  // DO SOMETHING!
+  console.log(book)
+}
