@@ -42,7 +42,11 @@ function BookForm() {
         value={book.description}
         onChange={handleChange}
         placeholder="description" />
-      <button type="submit">MAKE A BOOK</button>
+      <button
+        type="submit"
+        className="text-white">
+        MAKE A BOOK
+      </button>
     </form>
   )
 }
