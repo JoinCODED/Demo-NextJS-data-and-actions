@@ -1,5 +1,8 @@
 'use server'
 
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 const baseUrl = "https://coded-books-api-crud.eapi.joincoded.com";
 const headers = new Headers()
 headers.append("Content-Type", "application/json")
@@ -18,4 +21,8 @@ export async function createBook(formData) {
     body: JSON.stringify(book)
   })
   const newBook = await response.json()
+
+  revalidatePath('/books')
+  revalidatePath(`/books/[id]`, 'page')
+  redirect(`/books/${newBook.id}`)
 }
