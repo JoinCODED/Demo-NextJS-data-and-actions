@@ -24,10 +24,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="p-12">
-          {children}
-        </div>
+        <div className="p-12">{children}</div>
       </body>
     </html>
   );
 }
+
+export const fetchCache = "default-cache";
