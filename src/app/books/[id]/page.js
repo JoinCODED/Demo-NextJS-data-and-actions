@@ -1,9 +1,10 @@
-import BookCard from '@/components/BookCard'
-import books from '@/data/books'
+import BookCard from "@/components/BookCard";
+import books from "@/data/books";
 
-function BookDetailPage({ params }) {
-  const book = books.find(book => book.id === +params.id)
-  return <BookCard book={book} />
+async function BookDetailPage({ params }) {
+  const { id } = await params;
+  const book = books.find((book) => book.id === +id);
+  return <BookCard book={book} />;
 }
 
-export default BookDetailPage
+export default BookDetailPage;
